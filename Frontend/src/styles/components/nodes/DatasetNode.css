@@ -1,0 +1,126 @@
+.DatasetNodeNameTab,
+.DatasetNodeMainSection {
+	box-sizing: border-box;
+	font-family: "Funnel Display", sans-serif;
+	color: #ffffff;
+}
+
+.DatasetNodeNameTab {
+	width: 175px;
+	height: 30px;
+	margin-left: 46px;
+	margin-bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: transparent !important;
+	border-radius: 5px 5px 0 0;
+	position: relative;
+	z-index: 2;
+	overflow: hidden;
+}
+
+.DatasetNodeNameTab::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background-color: #433173;
+	clip-path: path("M 0 30 L 5 5 A 5 5 0 0 1 10 0 H 165 A 5 5 0 0 1 170 5 L 175 30 Z");
+	-webkit-clip-path: path("M 0 30 L 5 5 A 5 5 0 0 1 10 0 H 165 A 5 5 0 0 1 170 5 L 175 30 Z");
+	z-index: 0;
+	pointer-events: none;
+}
+
+.DatasetNodeNameTab h3 {
+	position: relative;
+	z-index: 1;
+	margin: 0;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 1;
+	letter-spacing: 0;
+}
+
+.DatasetNodeMainSection {
+	width: 267px;
+	height: 182px;
+	position: relative;
+	overflow: visible;
+	background-color: #56428F !important;
+	border-radius: 5px;
+	z-index: 1;
+}
+
+.DatasetNodeMainSection p {
+	position: absolute;
+	margin: 0;
+	font-size: 10px;
+	font-weight: 300;
+	line-height: 1;
+	white-space: nowrap;
+	transform: translateY(-50%);
+}
+
+.DatasetNodeMainSection .handle {
+	position: absolute;
+	width: 12px !important;
+	height: 12px !important;
+	min-width: 12px;
+	min-height: 12px;
+	background: #ffffff;
+	border: 2px solid #ffffff;
+	box-shadow: none;
+	transform: translateY(-50%);
+}
+
+.DatasetNodeMainSection > .handle:nth-child(1) {
+	top: 39px;
+	left: -6px;
+}
+
+.DatasetNodeMainSection > p:nth-child(2) {
+	top: 39px;
+	left: 16px;
+}
+
+.DatasetNodeMainSection > .handle:nth-child(3) {
+	top: 71px;
+	left: -6px;
+}
+
+.DatasetNodeMainSection > p:nth-child(4) {
+	top: 71px;
+	left: 16px;
+}
+
+.DatasetNodeMainSection > .handle:nth-child(5) {
+	top: 103px;
+	left: -6px;
+}
+
+.DatasetNodeMainSection > p:nth-child(6) {
+	top: 103px;
+	left: 16px;
+}
+
+.DatasetNodeMainSection > .handle:nth-child(7) {
+	top: 135px;
+	left: -6px;
+}
+
+.DatasetNodeMainSection > p:nth-child(8) {
+	top: 135px;
+	left: 16px;
+}
+
+.DatasetNodeMainSection > .handle:nth-child(9) {
+	top: 98px;
+	right: -6px;
+	left: auto;
+}
+
+.DatasetNodeMainSection > p:nth-child(10) {
+	top: 98px;
+	right: 16px;
+	left: auto;
+}

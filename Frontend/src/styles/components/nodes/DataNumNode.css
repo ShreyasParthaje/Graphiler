@@ -1,0 +1,135 @@
+.DataNumNodeNameTab,
+.DataNumNodeMainSection {
+	box-sizing: border-box;
+	font-family: "Funnel Display", sans-serif;
+	color: #ffffff;
+}
+
+.DataNumNodeNameTab {
+	width: 175px;
+	height: 30px;
+	margin-left: 46px;
+	margin-bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: transparent !important;
+	border-radius: 5px 5px 0 0;
+	position: relative;
+	z-index: 2;
+	overflow: hidden;
+}
+
+.DataNumNodeNameTab::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background-color: #774835;
+	clip-path: path("M 0 30 L 5 5 A 5 5 0 0 1 10 0 H 165 A 5 5 0 0 1 170 5 L 175 30 Z");
+	-webkit-clip-path: path("M 0 30 L 5 5 A 5 5 0 0 1 10 0 H 165 A 5 5 0 0 1 170 5 L 175 30 Z");
+	z-index: 0;
+	pointer-events: none;
+}
+
+.DataNumNodeNameTab h3 {
+	position: relative;
+	z-index: 1;
+	margin: 0;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 1;
+	letter-spacing: 0;
+}
+
+.DataNumNodeMainSection {
+	width: 267px;
+	height: 120px;
+	position: relative;
+	overflow: visible;
+	background-color: #8F5842 !important;
+	border-radius: 5px;
+	z-index: 1;
+}
+
+.DataNumNodeMainSection p {
+	position: absolute;
+	margin: 0;
+	font-size: 10px;
+	font-weight: 300;
+	line-height: 1;
+	white-space: nowrap;
+	transform: translateY(-50%);
+}
+
+.DataNumNodeMainSection .handle {
+	position: absolute;
+	width: 12px !important;
+	height: 12px !important;
+	min-width: 12px;
+	min-height: 12px;
+	background: #ffffff;
+	border: 2px solid #ffffff;
+	box-shadow: none;
+	transform: translateY(-50%);
+}
+
+.DataNumNodeMainSection > .handle:nth-child(1) {
+	top: 93px;
+	left: -6px;
+}
+
+.DataNumNodeMainSection > p:nth-child(2) {
+	top: 93px;
+	left: 16px;
+}
+
+.DataNumNodeMainSection > p:nth-child(3) {
+	top: 27px;
+	left: calc(50% - 81.5px);
+}
+
+.DataNumNodeMainSection > input:nth-child(4) {
+	position: absolute;
+	top: 35px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 163px;
+	height: 28px;
+	padding: 0 10px;
+	border: none;
+	border-radius: 5px;
+	outline: none;
+	background-color: #774835;
+	color: #ffffff;
+	font-family: "Funnel Display", sans-serif;
+	font-size: 10px;
+	font-weight: 300;
+	line-height: 1;
+	box-sizing: border-box;
+}
+
+.DataNumNodeMainSection > input:nth-child(4)::placeholder {
+	color: rgba(255, 255, 255, 0.7);
+}
+
+.DataNumNodeMainSection > input:nth-child(4)::-webkit-outer-spin-button,
+.DataNumNodeMainSection > input:nth-child(4)::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+.DataNumNodeMainSection > input:nth-child(4)[type='number'] {
+	-moz-appearance: textfield;
+}
+
+.DataNumNodeMainSection > .handle:nth-child(5) {
+	top: 93px;
+	right: -6px;
+	left: auto;
+}
+
+.DataNumNodeMainSection > p:nth-child(6) {
+	top: 93px;
+	right: 16px;
+	left: auto;
+}

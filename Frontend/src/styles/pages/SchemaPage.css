@@ -1,0 +1,19 @@
+.SchemaSection{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Target only the top Panel (first panel) to avoid changing other panels */
+.SchemaSection .react-flow__panel:first-of-type {
+    top: 0 !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+}
+
+/* Ensure child elements inside the top panel don't add extra offset */
+.SchemaSection .react-flow__panel:first-of-type * {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}

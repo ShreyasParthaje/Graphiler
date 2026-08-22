@@ -1,0 +1,168 @@
+.toolBar {
+	width: 562px;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: auto 50px;
+	column-gap: 0;
+	row-gap: 10px; /* vertical space between list and toolbar row */
+	border-radius: 5px;
+	position: relative;
+	box-sizing: border-box;
+	background: transparent; /* keep gap transparent so underlying canvas shows */
+}
+
+.toolBar > .list {
+	position: relative;
+	grid-row: 1;
+	width: 100%;
+	box-sizing: border-box;
+	background: #1E2026;
+	border-radius: 5px;
+	overflow: hidden;
+	z-index: 5;
+}
+
+.toolBar > .list:nth-of-type(1) {
+	grid-column: 1;
+}
+
+.toolBar > .list:nth-of-type(2) {
+	grid-column: 2;
+}
+
+.toolBar > .list:nth-of-type(3) {
+	grid-column: 3;
+}
+
+.toolBar > .list > .listButton {
+	width: 100%;
+	height: 36px;
+	border: 0;
+	margin: 0;
+	padding: 0 25px; /* keep inner spacing to match toolbar */
+	display: flex;
+	align-items: center;
+	justify-content: flex-start; /* align text from left like screenshot */
+	background: transparent;
+	color: #ffffff;
+	font-family: "Funnel Display";
+	font-size: 15px;
+	font-weight: 400;
+	cursor: pointer;
+	transition: background-color 0.18s ease, color 0.18s ease;
+	box-sizing: border-box;
+	white-space: nowrap;
+}
+
+.toolBar > .list > .listButton + .listButton {
+	border-top: 1px solid #414141;
+}
+
+.toolBar > .list > .listButton:hover {
+	background: #FF8000;
+	color: #ffffff;
+}
+
+.toolBar > .list:nth-of-type(2) > .listButton {
+	justify-content: center;
+	text-align: center;
+}
+
+.toolBar > .mathNodes,
+.toolBar > .conditionalNodes,
+.toolBar > .NumEx,
+.toolBar > .dataNodes {
+	width: 100%;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: transparent; /* toolbar background drawn by pseudo element */
+	color: #ffffff;
+	font-family: "Funnel Display";
+	font-size: 15px;
+	font-weight: 700;
+	cursor: pointer;
+	user-select: none;
+	box-sizing: border-box;
+	position: relative;
+	border: 0;
+	padding: 0 25px;
+	appearance: none;
+	-webkit-appearance: none;
+	white-space: nowrap;
+	z-index: 2;
+
+}
+
+/* preserve rounded corners when a segment is hovered */
+.toolBar > .mathNodes:hover {
+	border-radius: 5px 0 0 5px;
+}
+
+.toolBar > .Dataset:hover {
+	border-radius: 0 5px 5px 0;
+	overflow: hidden;
+}
+
+.toolBar > .mathNodes {
+	grid-column: 1;
+	grid-row: 2;
+}
+
+.toolBar > .conditionalNodes {
+	grid-column: 2;
+	grid-row: 2;
+}
+
+.toolBar > .dataNodes {
+	grid-column: 3;
+	grid-row: 2;
+}
+
+.toolBar > .NumEx {
+	grid-column: 4;
+	grid-row: 2;
+}
+
+.toolBar > .mathNodes::after,
+.toolBar > .conditionalNodes::after,
+.toolBar > .dataNodes::after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 1px;
+	height: 45px;
+	transform: translateY(-50%);
+	background: #414141;
+	pointer-events: none;
+}
+
+.toolBar > .NumEx:hover {
+	background: #FF8000;
+}
+
+.toolBar > .NumEx:hover {
+	border-radius: 0 5px 5px 0;
+	overflow: hidden;
+}
+
+.toolBar > .mathNodes:hover,
+.toolBar > .conditionalNodes:hover,
+.toolBar > .dataNodes:hover {
+	background: #252930;
+}
+
+/* draw the visible toolbar background only for the bottom row so the gap is transparent */
+.toolBar::before{
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 50px;
+	background: #1E2026;
+	border-radius: 5px;
+	z-index: 1;
+}
