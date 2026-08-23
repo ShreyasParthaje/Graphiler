@@ -8,7 +8,7 @@
 .DataMatrixNodeNameTab {
 	width: 175px;
 	height: 30px;
-	margin-left: 46px;
+	margin: 0 auto;
 	margin-bottom: 0;
 	display: flex;
 	align-items: center;
@@ -38,34 +38,99 @@
 	font-size: 15px;
 	font-weight: 400;
 	line-height: 1;
-	letter-spacing: 0;
 }
 
 .DataMatrixNodeMainSection {
-	width: fit-content;
-	height: fit-content;
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-	padding: 16px 34px 30px;
-	position: relative;
-	overflow: visible;
 	background-color: #4A8F42 !important;
 	border-radius: 5px;
+	padding: 31px 0;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	box-sizing: border-box;
+	width: fit-content;
+	height: fit-content;
 	z-index: 1;
 }
 
 .DataMatrixNodeMainSection p {
-	position: absolute;
-	margin: 0;
 	font-size: 10px;
 	font-weight: 300;
 	line-height: 1;
-	white-space: nowrap;
-	transform: translateY(-50%);
+	margin: 0;
 }
 
-.DataMatrixNodeMainSection .handle {
+.DimensionSection {
+	display: flex;
+	align-items: center;
+	height: 25px;
+	margin-bottom: 15px;
+}
+
+.DimensionSection p {
+	margin: 0 3px 0 0;
+}
+
+.DimensionSection input {
+	width: 60px;
+	height: 25px;
+	background-color: #396F33;
+	border: none;
+	border-radius: 5px;
+	color: #ffffff;
+	font-family: "Funnel Display", sans-serif;
+	font-size: 10px;
+	font-weight: 300;
+	text-align: center;
+	box-sizing: border-box;
+	margin: 0;
+	outline: none;
+}
+
+.DimensionSection input:first-of-type {
+	margin-right: 20px;
+}
+
+.DataMatrixNodeMainSection>div:nth-of-type(2) {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 0 58.5px;
+}
+
+.DataMatrixNodeMainSection>div:nth-of-type(2)>p {
+	margin: 0 0 5px 0;
+}
+
+.DataMatrixNodeMainSection>div:nth-of-type(2)>div {
+	display: flex;
+	flex-direction: column;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.DataMatrixNodeMainSection>div:nth-of-type(2)>div>div {
+	display: flex;
+}
+
+.DataMatrixNodeMainSection>div:nth-of-type(2)>div>div input {
+	width: 50px;
+	height: 25px;
+	background-color: #396F33;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 0;
+	color: #ffffff;
+	font-family: "Funnel Display", sans-serif;
+	font-size: 10px;
+	font-weight: 300;
+	text-align: center;
+	box-sizing: border-box;
+	margin: 0;
+	outline: none;
+}
+
+.DataMatrixNodeMainSection>.handle {
 	position: absolute;
 	width: 12px !important;
 	height: 12px !important;
@@ -73,128 +138,43 @@
 	min-height: 12px;
 	background: #ffffff;
 	border: 2px solid #ffffff;
+	border-radius: 50%;
 	box-shadow: none;
-	transform: translateY(-50%);
+	transform: translateY(-50%) !important;
 }
 
-.DataMatrixNodeMainSection > .handle:nth-child(3) {
-	top: auto;
-	bottom: 28px;
-	left: -6px;
+.DataMatrixNodeMainSection>.handle:nth-child(3) {
+	top: auto !important;
+	bottom: 28px !important;
+	left: -8px !important;
 }
 
-.DataMatrixNodeMainSection > .handle:nth-child(4) {
-	top: auto;
-	bottom: 28px;
-	right: -6px;
-	left: auto;
+.DataMatrixNodeMainSection>.handle:nth-child(4) {
+	top: auto !important;
+	bottom: 28px !important;
+	right: -8px !important;
+	left: auto !important;
 }
 
-.DataMatrixNodeMainSection > .handle:nth-child(3)::after,
-.DataMatrixNodeMainSection > .handle:nth-child(4)::after {
+.DataMatrixNodeMainSection>.handle:nth-child(3)::after,
+.DataMatrixNodeMainSection>.handle:nth-child(4)::after {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
 	font-size: 10px;
 	font-weight: 300;
-	line-height: 1;
-	white-space: nowrap;
 	color: #ffffff;
 	font-family: "Funnel Display", sans-serif;
 }
 
-.DataMatrixNodeMainSection > .handle:nth-child(3)::after {
+.DataMatrixNodeMainSection>.handle:nth-child(3)::after {
 	content: 'Set';
-	left: 18px;
+	left: calc(100% + 10px);
 }
 
-.DataMatrixNodeMainSection > .handle:nth-child(4)::after {
+.DataMatrixNodeMainSection>.handle:nth-child(4)::after {
 	content: 'Output';
-	right: 18px;
-}
-
-.DataMatrixNodeMainSection > div:nth-of-type(1) {
-	display: flex;
-	align-items: center;
-	flex-wrap: wrap;
-	column-gap: 3px;
-	row-gap: 10px;
-	width: fit-content;
-}
-
-.DataMatrixNodeMainSection > div:nth-of-type(1) p {
-	position: static;
-	transform: none;
-	margin: 0;
-	font-size: 10px;
-	font-weight: 300;
-	line-height: 1;
-	width: 12px;
-}
-
-.DataMatrixNodeMainSection > div:nth-of-type(1) input {
-	width: 60px;
-	height: 25px;
-	border: none;
-	border-radius: 5px;
-	outline: none;
-	background-color: #396F33;
-	color: #ffffff;
-	font-family: "Funnel Display", sans-serif;
-	font-size: 10px;
-	font-weight: 300;
-	line-height: 1;
-	box-sizing: border-box;
-	padding: 0 8px;
-}
-
-.DataMatrixNodeMainSection > div:nth-of-type(2) {
-	position: relative;
-	width: fit-content;
-}
-
-.DataMatrixNodeMainSection > div:nth-of-type(2) > p {
-	position: static;
-	transform: none;
-	margin: 0 0 8px 0;
-	font-size: 10px;
-	font-weight: 300;
-	line-height: 1;
-}
-
-.DataMatrixNodeMainSection > div:nth-of-type(2) > div {
-	display: grid;
-	grid-auto-rows: 25px;
-	gap: 0;
-	width: fit-content;
-}
-
-.DataMatrixNodeMainSection > div:nth-of-type(2) > div > div {
-	display: grid;
-	grid-auto-flow: column;
-	grid-auto-columns: 50px;
-	gap: 0;
-}
-
-.DataMatrixNodeMainSection > div:nth-of-type(2) > div > div input {
-	width: 50px;
-	height: 25px;
-	border: 1px solid rgba(255, 255, 255, 0.15);
-	border-radius: 5px;
-	outline: none;
-	background-color: #396F33;
-	color: #ffffff;
-	font-family: "Funnel Display", sans-serif;
-	font-size: 10px;
-	font-weight: 300;
-	line-height: 1;
-	box-sizing: border-box;
-	padding: 0 6px;
-	margin: 0;
-}
-
-.DataMatrixNodeMainSection > div:nth-of-type(2) > div > div input:not(:last-child) {
-	border-right: 1px solid rgba(0, 0, 0, 0.35);
+	right: calc(100% + 10px);
 }
 
 .DataMatrixNodeMainSection input[type='number']::-webkit-outer-spin-button,
