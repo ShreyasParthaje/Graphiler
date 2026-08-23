@@ -140,19 +140,20 @@
 	border: 2px solid #ffffff;
 	border-radius: 50%;
 	box-shadow: none;
+	transform: translateY(-50%) !important;
 }
 
 .DataMatrixNodeMainSection>.handle:nth-child(3) {
-	top: auto;
-	bottom: 37.5px;
-	left: -6px;
+	top: auto !important;
+	bottom: 28px !important;
+	left: -8px !important;
 }
 
 .DataMatrixNodeMainSection>.handle:nth-child(4) {
-	top: auto;
-	bottom: 37.5px;
-	right: -6px;
-	left: auto;
+	top: auto !important;
+	bottom: 28px !important;
+	right: -8px !important;
+	left: auto !important;
 }
 
 .DataMatrixNodeMainSection>.handle:nth-child(3)::after,
