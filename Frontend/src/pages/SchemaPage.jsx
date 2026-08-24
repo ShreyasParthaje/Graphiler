@@ -11,6 +11,7 @@ import NumExNode from '../components/nodes/NumExNode.jsx';
 import DataNumNode from '../components/nodes/DataNumNode.jsx';
 import DataMatrixNode from '../components/nodes/DataMatrixNode.jsx';
 import MathNumNode from '../components/nodes/MathNumNode.jsx';
+import MathMatrixNode from '../components/nodes/MathMatrixNode.jsx';
 
 const nodeTypes={
   datasetNode: DatasetNode,
@@ -18,6 +19,7 @@ const nodeTypes={
   dataNumNode: DataNumNode,
   dataMatrixNode: DataMatrixNode,
   mathNumNode: MathNumNode,
+  mathMatrixNode: MathMatrixNode,
 };
 
 function SchemaPage({ pageIndex, setPageIndex }) {
