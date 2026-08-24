@@ -1,0 +1,159 @@
+.MathNumNodeNameTab,
+.MathNumNodeMainSection {
+    box-sizing: border-box;
+    font-family: "Funnel Display", sans-serif;
+    color: #ffffff;
+}
+
+.MathNumNodeNameTab {
+    width: 175px;
+    height: 30px;
+    margin: 0 auto;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent !important;
+    border-radius: 5px 5px 0 0;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.MathNumNodeNameTab::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #356479;
+    clip-path: path("M 0 30 L 5 5 A 5 5 0 0 1 10 0 H 165 A 5 5 0 0 1 170 5 L 175 30 Z");
+    -webkit-clip-path: path("M 0 30 L 5 5 A 5 5 0 0 1 10 0 H 165 A 5 5 0 0 1 170 5 L 175 30 Z");
+    z-index: 0;
+    pointer-events: none;
+}
+
+.MathNumNodeNameTab h3 {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.MathNumNodeMainSection {
+    background-color: #42778F !important;
+    border-radius: 5px;
+    padding: 20px 0 20px 18px; /* Extra padding so handles don't touch edges when expanding */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* This magically centers the dynamic input handles vertically! */
+    box-sizing: border-box;
+    width: 267px;
+    min-height: 182px;
+    height: fit-content;
+    z-index: 1;
+}
+
+/* Base style for all dynamic left labels */
+.MathNumNodeMainSection p {
+    font-size: 10px;
+    font-weight: 300;
+    line-height: 1;
+    height: 10px;
+    margin: 0;
+}
+
+/* Number of Variables Label */
+.MathNumNodeMainSection > p:nth-last-of-type(3) {
+    position: absolute;
+    top: 31px;
+    left: 52px;
+}
+
+/* Expression Label */
+.MathNumNodeMainSection > p:nth-last-of-type(2) {
+    position: absolute;
+    top: 84px; /* Exactly 10px gap from previous input */
+    left: 52px;
+}
+
+/* Output Label */
+.MathNumNodeMainSection > p:nth-last-of-type(1) {
+    position: absolute;
+    top: 142px;
+    right: 18px;
+    left: auto;
+}
+
+/* Base style for all static inputs */
+.MathNumNodeMainSection input {
+    width: 163px;
+    height: 30px;
+    background-color: #356479;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-family: "Funnel Display", sans-serif;
+    font-size: 10px;
+    font-weight: 300;
+    box-sizing: border-box;
+    padding: 0 8px;
+    outline: none;
+    margin: 0;
+}
+
+/* Input 1 (Number of Variables) */
+.MathNumNodeMainSection > input:nth-of-type(1) {
+    position: absolute;
+    top: 44px; /* Exactly 3px gap from its label */
+    left: 52px;
+}
+
+/* Input 2 (Expression) */
+.MathNumNodeMainSection > input:nth-of-type(2) {
+    position: absolute;
+    top: 97px; /* Exactly 3px gap from its label */
+    left: 52px;
+}
+
+/* Base Handle Style */
+.MathNumNodeMainSection .Handle {
+    width: 12px !important;
+    height: 12px !important;
+    min-width: 12px;
+    min-height: 12px;
+    background: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    box-shadow: none;
+}
+
+/* Target handles (left, dynamic) */
+.MathNumNodeMainSection .react-flow__handle-left {
+    position: relative !important;
+    transform: none !important;
+    left: -26px !important; /* Move 26px left from the 18px padding to arrive at -8px */
+    top: -13px !important; /* Shift UP to perfectly center with the previous <p> tag */
+    margin-bottom: -6px !important; /* Removes remaining space and leaves exactly 10px gap to next row! */
+}
+
+/* Source handle (right, static output) */
+.MathNumNodeMainSection .react-flow__handle-right {
+    position: absolute !important;
+    transform: translateY(-50%) !important;
+    top: 147px !important; /* Exactly 5px below the 142px top label to perfectly center it! */
+    right: -8px !important;
+    left: auto !important;
+}
+
+/* Number input spin buttons */
+.MathNumNodeMainSection input[type='number']::-webkit-outer-spin-button,
+.MathNumNodeMainSection input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.MathNumNodeMainSection input[type='number'] {
+    -moz-appearance: textfield;
+}

@@ -25,7 +25,7 @@ function MathNumNode() {
                             return (
                                 <>
                                     <p>{item}</p>
-                                    <Handle className='handle' id={listOfHandles.indexOf(item)} position={Position.Left} type='target' />
+                                    <Handle className="Handle" id={listOfHandles.indexOf(item)} position={Position.Left} type='target' />
                                 </>
                             )
                         }
@@ -38,7 +38,7 @@ function MathNumNode() {
                 <input type="text" />
 
                 <p>Output</p>
-                <Handle className='handle' type="source" position={Position.Right} />
+                <Handle className="Handle" type="source" position={Position.Right} />
             </div>
         </div>
     )
