@@ -65,6 +65,7 @@ function ToolBar({ setNodes, setEdges }) {
     setMathNodeListState(false);
     const newNode = {
       id: nextId.toString(),
+      type: "mathMatrixNode",
       position: {x: 600, y:600},
       data: {label: 'MathMatrix'}
     };
