@@ -10,12 +10,14 @@ import DatasetNode from '../components/nodes/DatasetNode.jsx'
 import NumExNode from '../components/nodes/NumExNode.jsx';
 import DataNumNode from '../components/nodes/DataNumNode.jsx';
 import DataMatrixNode from '../components/nodes/DataMatrixNode.jsx';
+import MathNumNode from '../components/nodes/MathNumNode.jsx';
 
 const nodeTypes={
   datasetNode: DatasetNode,
   numExNode: NumExNode,
   dataNumNode: DataNumNode,
   dataMatrixNode: DataMatrixNode,
+  mathNumNode: MathNumNode,
 };
 
 function SchemaPage({ pageIndex, setPageIndex }) {
