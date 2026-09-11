@@ -78,6 +78,7 @@ function ToolBar({ setNodes, setEdges }) {
     setConditionalNodeListState(false);
     const newNode = {
       id: nextId.toString(),
+      type:"ifNode",
       position: {x: 700, y:600},
       data: {label: 'If'}
     };
