@@ -12,6 +12,7 @@ import DataNumNode from '../components/nodes/DataNumNode.jsx';
 import DataMatrixNode from '../components/nodes/DataMatrixNode.jsx';
 import MathNumNode from '../components/nodes/MathNumNode.jsx';
 import MathMatrixNode from '../components/nodes/MathMatrixNode.jsx';
+import IfNode from '../components/nodes/IfNode.jsx';
 
 const nodeTypes={
   datasetNode: DatasetNode,
@@ -20,6 +21,7 @@ const nodeTypes={
   dataMatrixNode: DataMatrixNode,
   mathNumNode: MathNumNode,
   mathMatrixNode: MathMatrixNode,
+  ifNode: IfNode,
 };
 
 function SchemaPage({ pageIndex, setPageIndex }) {
