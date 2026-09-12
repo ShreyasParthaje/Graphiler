@@ -7,7 +7,7 @@ function DatasetPage({ pageIndex, setPageIndex }) {
   return (
     <div>
       <TabBar pageIndex={pageIndex} setPageIndex={setPageIndex} />
-      <p>Work in progress, for output preview feature</p>
+      <p className='placeholderMessage'>Work in progress, for output preview feature</p>
     </div>
   )
 }
