@@ -17,3 +17,8 @@
     margin-top: 0 !important;
     padding-top: 0 !important;
 }
+
+.SchemaSection .react-flow__panel.top.left > div {
+    display: flex;
+    gap: 10px;
+}
