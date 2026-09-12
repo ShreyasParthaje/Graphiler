@@ -5,6 +5,8 @@ import '../styles/pages/SchemaPage.css'
 
 import ToolBar from '../components/ToolBar';
 import TabBar from '../components/TabBar';
+import Run from '../components/Run.jsx'
+import UploadDownload from '../components/UploadDownload.jsx'
 
 import DatasetNode from '../components/nodes/DatasetNode.jsx'
 import NumExNode from '../components/nodes/NumExNode.jsx';
@@ -56,6 +58,12 @@ function SchemaPage({ pageIndex, setPageIndex }) {
         </Panel>
         <Panel position='bottom-center'>
           <ToolBar setNodes={setNodes} setEdges={setEdges} />
+        </Panel>
+        <Panel position='top-right'>
+          <Run />
+        </Panel>
+        <Panel position='top-left'>
+          <UploadDownload />
         </Panel>
         <Background color='white' bgColor='#2B2E37' />
         <Controls />

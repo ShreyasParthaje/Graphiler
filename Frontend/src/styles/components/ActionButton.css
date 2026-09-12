@@ -1,0 +1,25 @@
+.ActionButton {
+	width: 42px;
+	height: 42px;
+	border: 0;
+	border-radius: 50%;
+	background-color: #1E2026;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	cursor: pointer;
+	transition: background-color 0.18s ease, transform 0.18s ease;
+}
+
+.ActionButton img {
+	width: 18px;
+	height: 18px;
+	display: block;
+	filter: brightness(0) invert(1);
+}
+
+.ActionButton:hover {
+	background-color: #FF8000;
+	transform: translateY(-1px);
+}
