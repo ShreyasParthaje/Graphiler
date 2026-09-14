@@ -1,10 +1,11 @@
-import React from 'react'
+import { useRef } from 'react'
 import uploadLogo from '../assets/upload.svg'
 import downloadLogo from '../assets/download.svg'
 import '../styles/components/ActionButton.css'
 
-function UploadDownload({schema}) {
-    function triggerSchemaToFile(){
+function UploadDownload({ schema, setNodes, setEdges }) {
+    const fileInputRef = useRef(null);
+    const triggerSchemaToFile = () => {
         const jsonString = JSON.stringify(schema, null, 2);
 
         const blob = new Blob([jsonString], { type: "application/json" });
@@ -19,14 +20,44 @@ function UploadDownload({schema}) {
         document.body.removeChild(link);
         URL.revokeObjectURL(url);
     }
+
+    const triggerFileToSchema = () => {
+        const userConfirmed = confirm("Uploading a file overwrites the existing schema you have generated. Do you wish to proceed ?")
+
+        if (userConfirmed) {
+            fileInputRef.current.click();
+        }
+    }
+
+    const handleFileChange = async (event) => {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        try {
+            const fileContent = await file.text();
+
+            const parsedData = JSON.parse(fileContent);
+
+            setNodes(parsedData.nodes);
+            setEdges(parsedData.edges);
+            console.log("Successfully parsed JSON:", parsedData);
+
+        } catch (error) {
+            console.error("Error reading or parsing the file. Ensure it is valid JSON.", error);
+        } finally {
+            event.target.value = null;
+        }
+    }
+
     return (
         <div>
-            <button className='ActionButton'>
+            <button className='ActionButton' onClick={triggerFileToSchema}>
                 <img src={uploadLogo} alt="upload" />
             </button>
             <button className='ActionButton' onClick={triggerSchemaToFile}>
                 <img src={downloadLogo} alt="download" />
             </button>
+            <input accept=".json" onChange={handleFileChange} ref={fileInputRef} type="file" style={{ display: 'none' }} />
         </div>
     )
 }
