@@ -63,7 +63,7 @@ function SchemaPage({ pageIndex, setPageIndex }) {
           <Run />
         </Panel>
         <Panel position='top-left'>
-          <UploadDownload />
+          <UploadDownload schema={{nodes, edges}} />
         </Panel>
         <Background color='white' bgColor='#2B2E37' />
         <Controls />
