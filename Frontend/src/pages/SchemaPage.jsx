@@ -31,6 +31,7 @@ function SchemaPage({ pageIndex, setPageIndex }) {
   const initialEdges = [];
   const [nodes, setNodes] = useState(initialNodes);
   const [edges, setEdges] = useState(initialEdges);
+  const [nextId, setNextId]=useState(1000);
 
   // Node and Edge change and connection handlers
   const onNodesChange = useCallback(
@@ -57,13 +58,13 @@ function SchemaPage({ pageIndex, setPageIndex }) {
           <TabBar pageIndex={pageIndex} setPageIndex={setPageIndex} />
         </Panel>
         <Panel position='bottom-center'>
-          <ToolBar setNodes={setNodes} setEdges={setEdges} />
+          <ToolBar nextId={nextId} setNextId={setNextId} setNodes={setNodes} setEdges={setEdges} />
         </Panel>
         <Panel position='top-right'>
           <Run />
         </Panel>
         <Panel position='top-left'>
-          <UploadDownload schema={{nodes, edges}} setNodes={setNodes} setEdges={setEdges} />
+          <UploadDownload schema={{nodes, edges}} setNodes={setNodes} setEdges={setEdges} setNextId={setNextId} />
         </Panel>
         <Background color='white' bgColor='#2B2E37' />
         <Controls />

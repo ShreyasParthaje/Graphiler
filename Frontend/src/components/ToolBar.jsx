@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import '../styles/components/ToolBar.css'
 
-function ToolBar({ setNodes, setEdges }) {
+function ToolBar({ nextId, setNextId, setNodes, setEdges }) {
   //Math Node List
   const [mathNodeListState, setMathNodeListState] = useState(false);
   const revealMathNodeList = ()=>{
@@ -45,7 +45,7 @@ function ToolBar({ setNodes, setEdges }) {
   }
 
   //Spawn funtions
-  const [nextId, setNextId]=useState(10000);
+  
 
   //Spawn MathNum Node
   const spawnMathNum = ()=>{

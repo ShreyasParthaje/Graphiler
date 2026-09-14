@@ -3,7 +3,7 @@ import uploadLogo from '../assets/upload.svg'
 import downloadLogo from '../assets/download.svg'
 import '../styles/components/ActionButton.css'
 
-function UploadDownload({ schema, setNodes, setEdges }) {
+function UploadDownload({ schema, setNodes, setEdges, setNextId }) {
     const fileInputRef = useRef(null);
     const triggerSchemaToFile = () => {
         const jsonString = JSON.stringify(schema, null, 2);
@@ -40,6 +40,7 @@ function UploadDownload({ schema, setNodes, setEdges }) {
 
             setNodes(parsedData.nodes);
             setEdges(parsedData.edges);
+            setNextId(nodes.at(-1).id+1);
             console.log("Successfully parsed JSON:", parsedData);
 
         } catch (error) {
