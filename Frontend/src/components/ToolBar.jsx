@@ -44,8 +44,7 @@ function ToolBar({ nextId, setNextId, setNodes, setEdges }) {
     }
   }
 
-  //Spawn funtions
-  
+  //Spawn functions
 
   //Spawn MathNum Node
   const spawnMathNum = ()=>{

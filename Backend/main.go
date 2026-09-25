@@ -1,23 +1,12 @@
 package main
 
 import (
+	"AIBuilderBackend/handlers"
 	"os"
 
 	"github.com/gin-contrib/cors" // You will need to run: go get github.com/gin-contrib/cors
 	"github.com/gin-gonic/gin"
 )
-
-func SchemaToFileHandler(c *gin.Context) {
-	c.String(200, "file")
-}
-
-func FileToSchemaHandler(c *gin.Context) {
-	c.String(200, "schema")
-}
-
-func SchemaToCodeHandler(c *gin.Context) {
-	c.String(200, "code")
-}
 
 func main() {
 	router := gin.Default() // Adds logging and crash recovery
@@ -30,9 +19,7 @@ func main() {
 	}))
 
 	// Routes
-	router.POST("/schemaToFile", SchemaToFileHandler)
-	router.POST("/fileToSchema", FileToSchemaHandler)
-	router.POST("/schemaToCode", SchemaToCodeHandler)
+	router.POST("/schemaToCode", handlers.SchemaToCode)
 
 	// Dynamic port binding for Render
 	port := os.Getenv("PORT")
