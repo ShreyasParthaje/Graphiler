@@ -91,6 +91,7 @@ function ToolBar({ nextId, setNextId, setNodes, setEdges }) {
     setConditionalNodeListState(false);
     const newNode = {
       id: nextId.toString(),
+      type: "elseNode",
       position: {x: 700, y:500},
       data: {label: 'Else'}
     };

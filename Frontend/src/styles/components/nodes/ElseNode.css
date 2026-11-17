@@ -1,0 +1,72 @@
+.ElseNodeNameTab,
+.ElseNodeMainSection {
+	box-sizing: border-box;
+	font-family: "Funnel Display", sans-serif;
+	color: #ffffff;
+}
+
+.ElseNodeNameTab {
+	width: 175px;
+	height: 30px;
+	margin-left: 46px;
+	margin-bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: transparent !important;
+	border-radius: 5px 5px 0 0;
+	position: relative;
+	z-index: 2;
+	overflow: hidden;
+}
+
+.ElseNodeNameTab::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background-color: #773848;
+	clip-path: path("M 0 30 L 5 5 A 5 5 0 0 1 10 0 H 165 A 5 5 0 0 1 170 5 L 175 30 Z");
+	-webkit-clip-path: path("M 0 30 L 5 5 A 5 5 0 0 1 10 0 H 165 A 5 5 0 0 1 170 5 L 175 30 Z");
+	z-index: 0;
+	pointer-events: none;
+}
+
+.ElseNodeNameTab h3 {
+	position: relative;
+	z-index: 1;
+	margin: 0;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 1;
+	letter-spacing: 0;
+}
+
+.ElseNodeMainSection {
+	width: 267px;
+	height: 49px;
+	position: relative;
+	overflow: visible;
+	background-color: #8f4255 !important;
+	border-radius: 5px;
+	z-index: 1;
+}
+
+.ElseNodeReceptacle {
+	width: 175px;
+	height: 30px;
+	position: absolute;
+	left: 46px;
+	bottom: 0;
+	background-color: transparent;
+	border-radius: 5px 5px 0 0;
+	overflow: hidden;
+}
+
+.ElseNodeReceptacle::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background-color: #773848;
+	clip-path: path("M 0 30 L 5 5 A 5 5 0 0 1 10 0 H 165 A 5 5 0 0 1 170 5 L 175 30 Z");
+	-webkit-clip-path: path("M 0 30 L 5 5 A 5 5 0 0 1 10 0 H 165 A 5 5 0 0 1 170 5 L 175 30 Z");
+}

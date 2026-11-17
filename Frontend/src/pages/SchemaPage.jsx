@@ -15,8 +15,9 @@ import DataMatrixNode from '../components/nodes/DataMatrixNode.jsx';
 import MathNumNode from '../components/nodes/MathNumNode.jsx';
 import MathMatrixNode from '../components/nodes/MathMatrixNode.jsx';
 import IfNode from '../components/nodes/IfNode.jsx';
+import ElseNode from '../components/nodes/ElseNode.jsx';
 
-const nodeTypes={
+const nodeTypes = {
   datasetNode: DatasetNode,
   numExNode: NumExNode,
   dataNumNode: DataNumNode,
@@ -24,14 +25,17 @@ const nodeTypes={
   mathNumNode: MathNumNode,
   mathMatrixNode: MathMatrixNode,
   ifNode: IfNode,
+  elseNode: ElseNode,
 };
+
+const START_ID=1000;
 
 function SchemaPage({ pageIndex, setPageIndex }) {
   const initialNodes = [];
   const initialEdges = [];
   const [nodes, setNodes] = useState(initialNodes);
   const [edges, setEdges] = useState(initialEdges);
-  const [nextId, setNextId]=useState(1000);
+  const [nextId, setNextId] = useState(START_ID);
 
   // Node and Edge change and connection handlers
   const onNodesChange = useCallback(
@@ -51,9 +55,9 @@ function SchemaPage({ pageIndex, setPageIndex }) {
 
   return (
     <div className='SchemaSection'>
-      <ReactFlow style={{width: '100%', height: '100%'}} 
-      nodes={nodes} edges={edges} nodeTypes={nodeTypes}
-      onEdgesChange={onEdgesChange} onNodesChange={onNodesChange} onConnect={onConnect}>
+      <ReactFlow style={{ width: '100%', height: '100%' }}
+        nodes={nodes} edges={edges} nodeTypes={nodeTypes}
+        onEdgesChange={onEdgesChange} onNodesChange={onNodesChange} onConnect={onConnect}>
         <Panel position='top-center'>
           <TabBar pageIndex={pageIndex} setPageIndex={setPageIndex} />
         </Panel>
@@ -64,7 +68,7 @@ function SchemaPage({ pageIndex, setPageIndex }) {
           <Run />
         </Panel>
         <Panel position='top-left'>
-          <UploadDownload schema={{nodes, edges}} setNodes={setNodes} setEdges={setEdges} setNextId={setNextId} />
+          <UploadDownload schema={{ nodes, edges }} setNodes={setNodes} setEdges={setEdges} setNextId={setNextId} />
         </Panel>
         <Background color='white' bgColor='#2B2E37' />
         <Controls />

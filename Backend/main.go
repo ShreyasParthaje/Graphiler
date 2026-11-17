@@ -4,7 +4,7 @@ import (
 	"AIBuilderBackend/handlers"
 	"os"
 
-	"github.com/gin-contrib/cors" // You will need to run: go get github.com/gin-contrib/cors
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
